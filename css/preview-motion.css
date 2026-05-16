@@ -206,11 +206,11 @@ body.preview-build .consult-title-1.pm-visible {
 }
 
 body.preview-build .hero-left {
-  transform: translate3d(0, 22px, 0) rotateX(1.2deg);
+  transform: none;
 }
 
 body.preview-build .hero-right {
-  transform: translate3d(0, 28px, 0) rotateY(-4deg);
+  transform: none;
 }
 
 body.preview-build .hero-frame-outer {
@@ -222,7 +222,7 @@ body.preview-build .hero-frame-outer {
 }
 
 body.preview-build .hero-frame-outer:hover {
-  transform: rotateY(-7deg) rotateX(5deg) translateY(-8px) scale(1.012);
+  transform: none;
   box-shadow: 0 42px 120px rgba(5, 19, 11, 0.32), 0 0 0 1px rgba(229, 184, 66, 0.26);
 }
 
@@ -236,7 +236,7 @@ body.preview-build .cert-item {
 body.preview-build .hero-mini-stat:hover,
 body.preview-build .hero-trust-item:hover,
 body.preview-build .cert-item:hover {
-  transform: translateY(-4px);
+  transform: none;
 }
 
 body.preview-build .scroll-indicator {

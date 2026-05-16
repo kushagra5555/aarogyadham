@@ -242,7 +242,6 @@
   injectRevealStyles();
   initRevealSystem();
   initNavPolish();
-  initHeroParallax();
   initCounterAnimation();
   initFooterMapReveal();
   initFormSuccessPolish();
