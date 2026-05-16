@@ -164,6 +164,25 @@ body.cursor-clicked #cursorRing { opacity: 0.4; }
     display: none !important;
   }
 }
+
+body.form-cursor-mode,
+body.form-cursor-mode *,
+body.form-cursor-mode *::before,
+body.form-cursor-mode *::after {
+  cursor: auto !important;
+}
+
+body.form-cursor-mode #cursorDot,
+body.form-cursor-mode #cursorRing,
+body.form-cursor-mode #cursorLabel {
+  opacity: 0 !important;
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--green-primary);
+}
 /* ── Sparkle Canvas ── */
 #sparkleCanvas { position:fixed; inset:0; width:100vw; height:100vh; pointer-events:none; z-index:999996; }
 

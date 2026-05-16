@@ -913,6 +913,17 @@ function buildConditions() {
 /* ============== Booking Form ============== */
 const consultForm = document.getElementById('consultForm');
 if (consultForm) {
+  consultForm.querySelectorAll('input, textarea, select').forEach(function(field) {
+    field.addEventListener('focus', function() {
+      document.body.classList.add('form-cursor-mode');
+    });
+    field.addEventListener('blur', function() {
+      if (!consultForm.querySelector(':focus')) {
+        document.body.classList.remove('form-cursor-mode');
+      }
+    });
+  });
+
   consultForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('cf-name').value.trim();

@@ -2387,11 +2387,12 @@ section.hero .hero-frame-inner img {
       <div class="booking-form-wrap">
         <div class="booking-form-title">Request Your Free Consultation</div>
         <div class="booking-form-sub">Fill in your details — we'll get back to you within 24 hours</div>
-        <form id="consultForm" action="https://formsubmit.co/kushagra05555@gmail.com" method="POST" target="hiddenFormTarget" novalidate>
+        <form id="consultForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
           <input type="hidden" id="cf-subject" value="New Free Consultation Request - Yog Arogyadham" />
-          <input type="hidden" name="_subject" value="New Free Consultation Request - Yog Arogyadham" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="access_key" value="b28f87e5-20d9-4229-91bc-00f2537070e8" />
+          <input type="hidden" name="subject" value="New Free Consultation Request - Yog Arogyadham" />
+          <input type="hidden" name="from_name" value="Yog Arogyadham Website" />
+          <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <div class="form-group">
               <label for="cf-name">Full Name *</label>
@@ -2459,7 +2460,6 @@ section.hero .hero-frame-inner img {
           </button>
           <div class="form-note">🔒 Your information is private and never shared</div>
         </form>
-        <iframe name="hiddenFormTarget" style="display:none;" title="Hidden form target"></iframe>
         <div class="form-success" id="formSuccess">✅ Thank you! Yogacharya Ajit Singh will personally contact you within 24 hours.</div>
       </div>
     </div>
