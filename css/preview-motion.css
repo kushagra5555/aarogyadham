@@ -10,7 +10,16 @@
 }
 
 body.preview-build {
-  perspective: 1200px;
+  perspective: none;
+}
+
+body.preview-build #cursorDot,
+body.preview-build #cursorRing,
+body.preview-build #cursorLabel {
+  perspective: none !important;
+  transform-style: flat !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
