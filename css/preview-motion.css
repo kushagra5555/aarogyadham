@@ -13,21 +13,6 @@ body.preview-build {
   perspective: 1200px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  body.preview-build:not(.form-cursor-mode) #cursorDot,
-  body.preview-build:not(.form-cursor-mode) #cursorRing,
-  body.preview-build:not(.form-cursor-mode) #cursorLabel {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  body.preview-build:not(.form-cursor-mode) #cursorDot,
-  body.preview-build:not(.form-cursor-mode) #cursorRing {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;

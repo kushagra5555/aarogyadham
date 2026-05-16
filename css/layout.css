@@ -113,6 +113,7 @@ to{opacity:1;transform:translateY(0)}}
 @keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ═══ PREMIUM CURSOR SYSTEM ═══ */
+*, *::before, *::after { cursor: none !important; }
 #cursorDot {
   pointer-events: none; position: fixed; z-index: 999999;
   width: 6px; height: 6px; border-radius: 50%;
@@ -146,43 +147,6 @@ to{opacity:1;transform:translateY(0)}}
 body.cursor-label-show #cursorLabel { opacity: 1; }
 body.cursor-clicked #cursorDot { --cursor-scale: 0.5; }
 body.cursor-clicked #cursorRing { opacity: 0.4; }
-
-@media (hover: hover) and (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
-  #cursorDot,
-  #cursorRing,
-  #cursorLabel {
-    display: block !important;
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  *, *::before, *::after { cursor: auto !important; }
-  #cursorDot,
-  #cursorRing,
-  #cursorLabel {
-    display: none !important;
-  }
-}
-
-body.form-cursor-mode,
-body.form-cursor-mode *,
-body.form-cursor-mode *::before,
-body.form-cursor-mode *::after {
-  cursor: auto !important;
-}
-
-body.form-cursor-mode #cursorDot,
-body.form-cursor-mode #cursorRing,
-body.form-cursor-mode #cursorLabel {
-  opacity: 0 !important;
-}
-
-input,
-textarea,
-select {
-  caret-color: var(--green-primary);
-}
 /* ── Sparkle Canvas ── */
 #sparkleCanvas { position:fixed; inset:0; width:100vw; height:100vh; pointer-events:none; z-index:999996; }
 
