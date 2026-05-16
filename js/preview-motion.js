@@ -247,7 +247,15 @@
     var label = document.getElementById('cursorLabel');
     if (!body || !dot || !ring) return;
 
+    function fieldIsActive(target) {
+      return !!(target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName));
+    }
+
     function showCursor() {
+      var active = document.activeElement;
+      if (body.classList.contains('form-cursor-mode') && !fieldIsActive(active)) {
+        body.classList.remove('form-cursor-mode');
+      }
       if (body.classList.contains('form-cursor-mode')) return;
       dot.style.opacity = '1';
       dot.style.visibility = 'visible';
@@ -255,13 +263,14 @@
       ring.style.visibility = 'visible';
       if (label && !body.classList.contains('cursor-label-show')) {
         label.style.opacity = '0';
+        label.style.visibility = 'visible';
       }
     }
 
     function resetFormCursorMode(event) {
       var active = document.activeElement;
-      var isField = active && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName);
-      var targetIsField = event && event.target && /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName);
+      var isField = fieldIsActive(active);
+      var targetIsField = fieldIsActive(event && event.target);
       if (!isField && !targetIsField) {
         body.classList.remove('form-cursor-mode');
         showCursor();
@@ -271,8 +280,12 @@
     document.addEventListener('mousemove', showCursor, { passive: true });
     document.addEventListener('pointermove', showCursor, { passive: true });
     document.addEventListener('click', resetFormCursorMode, true);
+    document.addEventListener('focusout', function () {
+      window.requestAnimationFrame(showCursor);
+    });
     window.addEventListener('blur', function () {
       body.classList.remove('form-cursor-mode');
+      showCursor();
     });
     showCursor();
   }
