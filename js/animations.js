@@ -84,6 +84,7 @@ setTimeout(function() {
     var rx = 0, ry = 0, mx = 0, my = 0;
 
     if (dot && ring) {
+      document.body.classList.add("cursor-enhanced");
       /* Dot: GPU transform — zero layout cost, perfectly instant */
       document.addEventListener("mousemove", function(e) {
         mx = e.clientX; my = e.clientY;

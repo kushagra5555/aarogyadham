@@ -113,7 +113,10 @@ to{opacity:1;transform:translateY(0)}}
 @keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ═══ PREMIUM CURSOR SYSTEM ═══ */
-*, *::before, *::after { cursor: none !important; }
+body.cursor-enhanced,
+body.cursor-enhanced *,
+body.cursor-enhanced *::before,
+body.cursor-enhanced *::after { cursor: none !important; }
 #cursorDot {
   pointer-events: none; position: fixed; z-index: 999999;
   width: 6px; height: 6px; border-radius: 50%;

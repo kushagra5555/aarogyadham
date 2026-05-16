@@ -244,8 +244,6 @@
   initNavPolish();
   initHeroParallax();
   initCounterAnimation();
-  initConditionTilt();
   initFooterMapReveal();
-  initPointerDepth();
   initFormSuccessPolish();
 })();
