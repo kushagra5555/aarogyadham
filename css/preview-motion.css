@@ -1,0 +1,692 @@
+:root {
+  --pm-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-duration-fast: 360ms;
+  --pm-duration: 680ms;
+  --pm-duration-slow: 1200ms;
+  --pm-shadow-soft: 0 30px 70px rgba(7, 31, 18, 0.12);
+  --pm-shadow-rich: 0 42px 110px rgba(7, 31, 18, 0.18);
+  --pm-gold-glow: 0 0 0 1px rgba(229, 184, 66, 0.25), 0 24px 60px rgba(200, 149, 42, 0.18);
+}
+
+body.preview-build {
+  perspective: 1200px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.preview-build:not(.form-cursor-mode) #cursorDot,
+  body.preview-build:not(.form-cursor-mode) #cursorRing,
+  body.preview-build:not(.form-cursor-mode) #cursorLabel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  body.preview-build:not(.form-cursor-mode) #cursorDot,
+  body.preview-build:not(.form-cursor-mode) #cursorRing {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body.preview-build .hero,
+body.preview-build .founder,
+body.preview-build .conditions,
+body.preview-build .consult,
+body.preview-build .gallery,
+body.preview-build .blog,
+body.preview-build .haridwar-team,
+body.preview-build .faq,
+body.preview-build .booking,
+body.preview-build .pain,
+body.preview-build .stats,
+body.preview-build .aeo-snapshot,
+body.preview-build .how {
+  transform-style: preserve-3d;
+}
+
+body.preview-build .nav {
+  transition: background-color var(--pm-duration-fast) var(--pm-ease-soft),
+    box-shadow var(--pm-duration-fast) var(--pm-ease-soft),
+    backdrop-filter var(--pm-duration-fast) var(--pm-ease-soft),
+    transform var(--pm-duration-fast) var(--pm-ease-soft);
+}
+
+body.preview-build .nav.preview-scrolled {
+  background: rgba(255, 252, 246, 0.88);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 16px 45px rgba(10, 44, 28, 0.08);
+}
+
+body.preview-build .nav-link {
+  position: relative;
+  transition: color 240ms ease, transform 240ms ease;
+}
+
+body.preview-build .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(229, 184, 66, 0.1), rgba(229, 184, 66, 0.95), rgba(229, 184, 66, 0.12));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 280ms var(--pm-ease-soft);
+}
+
+body.preview-build .nav-link:hover,
+body.preview-build .nav-link.active {
+  transform: translateY(-1px);
+}
+
+body.preview-build .nav-link:hover::after,
+body.preview-build .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+body.preview-build .btn-gold,
+body.preview-build .btn-hero-primary,
+body.preview-build .btn-founder,
+body.preview-build .btn-submit,
+body.preview-build .btn-whatsapp {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--pm-duration-fast) var(--pm-ease-soft),
+    box-shadow var(--pm-duration-fast) var(--pm-ease-soft),
+    filter var(--pm-duration-fast) var(--pm-ease-soft);
+}
+
+body.preview-build .btn-gold::before,
+body.preview-build .btn-hero-primary::before,
+body.preview-build .btn-founder::before,
+body.preview-build .btn-submit::before,
+body.preview-build .btn-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -30%;
+  width: 34%;
+  transform: skewX(-18deg) translateX(-180%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+body.preview-build .btn-gold:hover,
+body.preview-build .btn-hero-primary:hover,
+body.preview-build .btn-founder:hover,
+body.preview-build .btn-submit:hover,
+body.preview-build .btn-whatsapp:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: var(--pm-gold-glow);
+  filter: saturate(110%);
+}
+
+body.preview-build .btn-gold:hover::before,
+body.preview-build .btn-hero-primary:hover::before,
+body.preview-build .btn-founder:hover::before,
+body.preview-build .btn-submit:hover::before,
+body.preview-build .btn-whatsapp:hover::before {
+  animation: pm-shimmer 920ms var(--pm-ease-out) forwards;
+}
+
+body.preview-build .mobile-toggle {
+  transition: transform var(--pm-duration-fast) var(--pm-ease-soft),
+    background-color var(--pm-duration-fast) var(--pm-ease-soft),
+    box-shadow var(--pm-duration-fast) var(--pm-ease-soft);
+}
+
+body.preview-build .mobile-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(10, 44, 28, 0.18);
+}
+
+body.preview-build .hero {
+  overflow: clip;
+}
+
+body.preview-build .hero::before {
+  content: "";
+  position: absolute;
+  inset: 14% auto auto 6%;
+  width: 38vw;
+  height: 38vw;
+  max-width: 520px;
+  max-height: 520px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(229, 184, 66, 0.22) 0%, rgba(229, 184, 66, 0.06) 42%, rgba(229, 184, 66, 0) 72%);
+  filter: blur(6px);
+  transform: translateZ(-30px);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+body.preview-build .hero-content {
+  perspective: 1200px;
+}
+
+body.preview-build .hero-left,
+body.preview-build .hero-right,
+body.preview-build .hero-lotus-bg,
+body.preview-build .hero-pattern-layer,
+body.preview-build .hero-mandala,
+body.preview-build .hero-om-watermark,
+body.preview-build .hero-frame-outer,
+body.preview-build .hero-portrait-caption,
+body.preview-build .hero-trust-item,
+body.preview-build .hero-mini-stat,
+body.preview-build .hero-cert-strip .cert-item {
+  will-change: transform, opacity;
+}
+
+body.preview-build .pm-item {
+  transition:
+    box-shadow var(--pm-duration-fast) var(--pm-ease-soft),
+    filter var(--pm-duration-fast) var(--pm-ease-soft);
+}
+
+body.preview-build .hero-title.pm-visible,
+body.preview-build .founder-name.pm-visible,
+body.preview-build .consult-title-1.pm-visible {
+  animation-name: pm-title-settle !important;
+  animation-duration: var(--pm-duration-slow) !important;
+  animation-timing-function: var(--pm-ease-out) !important;
+  animation-fill-mode: both !important;
+}
+
+body.preview-build .hero-left {
+  transform: translate3d(0, 22px, 0) rotateX(1.2deg);
+}
+
+body.preview-build .hero-right {
+  transform: translate3d(0, 28px, 0) rotateY(-4deg);
+}
+
+body.preview-build .hero-frame-outer {
+  transition:
+    transform 700ms var(--pm-ease-soft),
+    box-shadow 700ms var(--pm-ease-soft),
+    border-color 480ms ease;
+  box-shadow: 0 24px 70px rgba(5, 19, 11, 0.24), 0 0 0 1px rgba(229, 184, 66, 0.14);
+}
+
+body.preview-build .hero-frame-outer:hover {
+  transform: rotateY(-7deg) rotateX(5deg) translateY(-8px) scale(1.012);
+  box-shadow: 0 42px 120px rgba(5, 19, 11, 0.32), 0 0 0 1px rgba(229, 184, 66, 0.26);
+}
+
+body.preview-build .hero-mini-stat,
+body.preview-build .hero-trust-item,
+body.preview-build .cert-item {
+  border-radius: 24px;
+  transition: transform 440ms var(--pm-ease-soft), box-shadow 440ms var(--pm-ease-soft), background-color 440ms var(--pm-ease-soft);
+}
+
+body.preview-build .hero-mini-stat:hover,
+body.preview-build .hero-trust-item:hover,
+body.preview-build .cert-item:hover {
+  transform: translateY(-4px);
+}
+
+body.preview-build .scroll-indicator {
+  animation: pm-scroll-float 2.7s ease-in-out infinite;
+}
+
+body.preview-build .trust-bar {
+  position: relative;
+}
+
+body.preview-build .trust-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(229, 184, 66, 0.12), transparent);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+body.preview-build .trust-bar.pm-visible::after {
+  animation: pm-band-sheen 5.4s linear infinite;
+}
+
+body.preview-build .stats .stat {
+  transform: translate3d(0, 30px, 0) scale(0.98);
+  transition: opacity 620ms var(--pm-ease-out), transform 620ms var(--pm-ease-out), box-shadow 420ms ease;
+}
+
+body.preview-build .stats .stat.pm-visible {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+body.preview-build .stats .stat:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--pm-shadow-soft);
+}
+
+body.preview-build .pain-card,
+body.preview-build .answer-card,
+body.preview-build .how-card,
+body.preview-build .haridwar-card,
+body.preview-build .booking-form-wrap,
+body.preview-build .blog-card,
+body.preview-build .footer-contact-item,
+body.preview-build .gallery-grid figure,
+body.preview-build .faq-item,
+body.preview-build .pbfaq-item {
+  transition:
+    transform 480ms var(--pm-ease-soft),
+    box-shadow 480ms var(--pm-ease-soft),
+    border-color 320ms ease,
+    background-color 320ms ease,
+    opacity var(--pm-duration) var(--pm-ease-out);
+}
+
+body.preview-build .pain-card:hover,
+body.preview-build .answer-card:hover,
+body.preview-build .how-card:hover,
+body.preview-build .haridwar-card:hover,
+body.preview-build .booking-form-wrap:hover,
+body.preview-build .blog-card:hover,
+body.preview-build .faq-item:hover,
+body.preview-build .pbfaq-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--pm-shadow-soft);
+}
+
+body.preview-build .pain-card::before,
+body.preview-build .answer-card::before,
+body.preview-build .how-card::before,
+body.preview-build .haridwar-card::before,
+body.preview-build .booking-form-wrap::before,
+body.preview-build .blog-card::before,
+body.preview-build .faq-item::before,
+body.preview-build .pbfaq-item::before,
+body.preview-build .consult-image-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(229, 184, 66, 0.16), transparent 34%, transparent 68%, rgba(255, 255, 255, 0.12));
+  opacity: 0;
+  transition: opacity 360ms ease;
+  pointer-events: none;
+}
+
+body.preview-build .pain-card:hover::before,
+body.preview-build .answer-card:hover::before,
+body.preview-build .how-card:hover::before,
+body.preview-build .haridwar-card:hover::before,
+body.preview-build .booking-form-wrap:hover::before,
+body.preview-build .blog-card:hover::before,
+body.preview-build .faq-item:hover::before,
+body.preview-build .pbfaq-item:hover::before,
+body.preview-build .consult-image-inner:hover::before {
+  opacity: 1;
+}
+
+body.preview-build .conditions {
+  perspective: 1600px;
+}
+
+body.preview-build .flip-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 420ms var(--pm-ease-soft),
+    box-shadow 420ms var(--pm-ease-soft),
+    opacity var(--pm-duration) var(--pm-ease-out);
+  box-shadow: 0 16px 34px rgba(7, 31, 18, 0.1);
+}
+
+body.preview-build .flip-card.pm-visible {
+  opacity: 1;
+}
+
+body.preview-build .flip-card.pm-tilting {
+  transform: perspective(1200px) rotateX(var(--pm-rotate-x, 0deg)) rotateY(var(--pm-rotate-y, 0deg)) translateY(-10px) scale(1.015);
+  box-shadow: var(--pm-shadow-rich);
+}
+
+body.preview-build .flip-card .flip-inner {
+  transition: transform 540ms var(--pm-ease-soft);
+}
+
+body.preview-build .flip-card:hover .flip-img img {
+  transform: scale(1.06);
+}
+
+body.preview-build .flip-card .flip-img img {
+  transition: transform 620ms var(--pm-ease-soft), filter 620ms var(--pm-ease-soft);
+}
+
+body.preview-build .flip-card:hover .flip-chip {
+  box-shadow: 0 0 0 1px rgba(229, 184, 66, 0.38), 0 12px 28px rgba(200, 149, 42, 0.16);
+}
+
+body.preview-build .conditions-more-btn,
+body.preview-build .category-more-btn,
+body.preview-build #galleryToggleBtn,
+body.preview-build #blogToggleBtn {
+  transition: transform 320ms var(--pm-ease-soft), box-shadow 320ms var(--pm-ease-soft), background-color 320ms ease;
+}
+
+body.preview-build .conditions-more-btn:hover,
+body.preview-build .category-more-btn:hover,
+body.preview-build #galleryToggleBtn:hover,
+body.preview-build #blogToggleBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(7, 31, 18, 0.12);
+}
+
+body.preview-build .how-card {
+  position: relative;
+  overflow: hidden;
+}
+
+body.preview-build .how-img {
+  transition: transform 900ms var(--pm-ease-soft), filter 900ms var(--pm-ease-soft);
+}
+
+body.preview-build .how-card:hover .how-img {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+
+body.preview-build .how-step {
+  position: relative;
+}
+
+body.preview-build .how-step::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: -8px;
+  bottom: -6px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(229, 184, 66, 0.82), rgba(229, 184, 66, 0));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms var(--pm-ease-soft);
+}
+
+body.preview-build .how-card:hover .how-step::after {
+  transform: scaleX(1);
+}
+
+body.preview-build .founder-grid {
+  perspective: 1600px;
+}
+
+body.preview-build .founder-images {
+  transform: translate3d(0, 32px, 0) rotateY(6deg);
+  transition: transform 760ms var(--pm-ease-soft), opacity var(--pm-duration) var(--pm-ease-out);
+}
+
+body.preview-build .founder-images.pm-visible {
+  transform: translate3d(0, 0, 0) rotateY(0deg) !important;
+}
+
+body.preview-build .founder-primary,
+body.preview-build .founder-secondary,
+body.preview-build .depth-badge {
+  transition: transform 620ms var(--pm-ease-soft), box-shadow 620ms var(--pm-ease-soft), opacity var(--pm-duration) var(--pm-ease-out);
+  transform-style: preserve-3d;
+}
+
+body.preview-build .founder-images:hover .founder-primary {
+  transform: translate3d(0, -8px, 20px) rotateY(-6deg);
+  box-shadow: var(--pm-shadow-rich);
+}
+
+body.preview-build .founder-images:hover .founder-secondary {
+  transform: translate3d(14px, 8px, 8px) rotateY(8deg);
+}
+
+body.preview-build .founder-images:hover .depth-badge--rimyi {
+  transform: translate3d(-10px, -8px, 34px);
+}
+
+body.preview-build .founder-images:hover .depth-badge--patients {
+  transform: translate3d(10px, -10px, 44px);
+}
+
+body.preview-build .founder-images:hover .depth-badge--nooperation {
+  transform: translate3d(-12px, 10px, 28px);
+}
+
+body.preview-build .founder-story,
+body.preview-build .founder-quals li {
+  transition: transform 620ms var(--pm-ease-soft), opacity var(--pm-duration) var(--pm-ease-out);
+}
+
+body.preview-build .founder-quals li {
+  transform: translate3d(0, 18px, 0);
+  opacity: 0;
+}
+
+body.preview-build .founder-quals.pm-visible li {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+body.preview-build .founder-quals.pm-visible li:nth-child(1) { transition-delay: 60ms; }
+body.preview-build .founder-quals.pm-visible li:nth-child(2) { transition-delay: 120ms; }
+body.preview-build .founder-quals.pm-visible li:nth-child(3) { transition-delay: 180ms; }
+body.preview-build .founder-quals.pm-visible li:nth-child(4) { transition-delay: 240ms; }
+
+body.preview-build .gallery-grid figure {
+  overflow: hidden;
+}
+
+body.preview-build .gallery-grid img {
+  transition: transform 760ms var(--pm-ease-soft), filter 760ms var(--pm-ease-soft);
+}
+
+body.preview-build .gallery-grid figure:hover {
+  transform: perspective(1200px) translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: var(--pm-shadow-soft);
+}
+
+body.preview-build .gallery-grid figure:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+body.preview-build .consult-image-inner {
+  position: relative;
+  overflow: hidden;
+  transition: transform 720ms var(--pm-ease-soft), box-shadow 720ms var(--pm-ease-soft);
+}
+
+body.preview-build .consult-image-inner:hover {
+  transform: perspective(1200px) rotateY(-6deg) rotateX(4deg) translateY(-8px);
+  box-shadow: var(--pm-shadow-rich);
+}
+
+body.preview-build .booking-form-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+body.preview-build .form-group input,
+body.preview-build .form-group textarea,
+body.preview-build .form-group select {
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease, background-color 220ms ease;
+}
+
+body.preview-build .form-group input:focus,
+body.preview-build .form-group textarea:focus,
+body.preview-build .form-group select:focus {
+  border-color: rgba(200, 149, 42, 0.86);
+  box-shadow: 0 0 0 4px rgba(229, 184, 66, 0.14);
+  transform: translateY(-1px);
+}
+
+body.preview-build .blog-card {
+  overflow: hidden;
+}
+
+body.preview-build .blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--pm-shadow-soft);
+}
+
+body.preview-build .blog-card .blog-thumb,
+body.preview-build .blog-card .blog-img-wrap {
+  transition: transform 620ms var(--pm-ease-soft), filter 620ms var(--pm-ease-soft);
+}
+
+body.preview-build .blog-card:hover .blog-thumb,
+body.preview-build .blog-card:hover .blog-img-wrap {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
+body.preview-build .blog-link {
+  position: relative;
+}
+
+body.preview-build .blog-link::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 240ms var(--pm-ease-soft);
+}
+
+body.preview-build .blog-card:hover .blog-link::after {
+  transform: translateX(4px);
+}
+
+body.preview-build .footer-grid > * {
+  transition: transform 520ms var(--pm-ease-soft), opacity var(--pm-duration) var(--pm-ease-out);
+}
+
+body.preview-build .footer-social a,
+body.preview-build .footer-contact-item a {
+  transition: transform 240ms var(--pm-ease-soft), color 240ms ease, opacity 240ms ease;
+}
+
+body.preview-build .footer-social a:hover,
+body.preview-build .footer-contact-item a:hover {
+  transform: translateY(-2px);
+}
+
+body.preview-build .footer-contact-item iframe {
+  transition: transform 540ms var(--pm-ease-soft), box-shadow 540ms var(--pm-ease-soft), opacity var(--pm-duration) var(--pm-ease-out);
+}
+
+body.preview-build .footer-contact-item:hover iframe {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(5, 19, 11, 0.22);
+}
+
+body.preview-build .pm-delay-1 { animation-delay: 60ms !important; }
+body.preview-build .pm-delay-2 { animation-delay: 120ms !important; }
+body.preview-build .pm-delay-3 { animation-delay: 180ms !important; }
+body.preview-build .pm-delay-4 { animation-delay: 240ms !important; }
+body.preview-build .pm-delay-5 { animation-delay: 300ms !important; }
+body.preview-build .pm-delay-6 { animation-delay: 360ms !important; }
+
+@media (hover: none), (pointer: coarse) {
+  body.preview-build #cursorDot,
+  body.preview-build #cursorRing,
+  body.preview-build #cursorLabel {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  body.preview-build .hero-frame-outer:hover,
+  body.preview-build .consult-image-inner:hover,
+  body.preview-build .gallery-grid figure:hover,
+  body.preview-build .pain-card:hover,
+  body.preview-build .answer-card:hover,
+  body.preview-build .how-card:hover,
+  body.preview-build .haridwar-card:hover,
+  body.preview-build .booking-form-wrap:hover,
+  body.preview-build .blog-card:hover,
+  body.preview-build .faq-item:hover,
+  body.preview-build .pbfaq-item:hover,
+  body.preview-build .stats .stat:hover,
+  body.preview-build .hero-mini-stat:hover,
+  body.preview-build .hero-trust-item:hover,
+  body.preview-build .cert-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  body.preview-build .flip-card.pm-tilting {
+    transform: none;
+    box-shadow: 0 16px 34px rgba(7, 31, 18, 0.1);
+  }
+
+  body.preview-build .founder-images:hover .founder-primary,
+  body.preview-build .founder-images:hover .founder-secondary,
+  body.preview-build .founder-images:hover .depth-badge--rimyi,
+  body.preview-build .founder-images:hover .depth-badge--patients,
+  body.preview-build .founder-images:hover .depth-badge--nooperation {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 900px) {
+  body.preview-build .nav.preview-scrolled {
+    backdrop-filter: blur(12px) saturate(120%);
+  }
+
+  body.preview-build .hero::before {
+    width: 56vw;
+    height: 56vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  body.preview-build .hero-left,
+  body.preview-build .hero-right,
+  body.preview-build .founder-images {
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+@keyframes pm-shimmer {
+  0% { transform: skewX(-18deg) translateX(-180%); }
+  100% { transform: skewX(-18deg) translateX(420%); }
+}
+
+@keyframes pm-scroll-float {
+  0%, 100% { transform: translateY(0); opacity: 0.82; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+@keyframes pm-title-settle {
+  0% {
+    transform: translate3d(0, 18px, 0) scale(0.985);
+    filter: blur(12px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes pm-band-sheen {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
