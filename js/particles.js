@@ -22,6 +22,10 @@
   var WHITE  = ['#ffffff','#f0faf5','#E5B842','#fff8e7'];
   var currentPalette = GOLD;
 
+  function heroZoneActive() {
+    return window.scrollY < Math.min(H * 0.8, 760);
+  }
+
   function getPalette() {
     var sy = window.scrollY;
     var sections = [
@@ -108,6 +112,10 @@
   /* ── Emit on mouse move ── */
   document.addEventListener('mousemove', function(e) {
     mouseX = e.clientX; mouseY = e.clientY;
+    if (heroZoneActive()) {
+      lastMouseX = mouseX; lastMouseY = mouseY;
+      return;
+    }
     var dx = mouseX - lastMouseX;
     var dy = mouseY - lastMouseY;
     var speed = Math.sqrt(dx*dx + dy*dy);
@@ -130,6 +138,9 @@
   /* ── Render loop ── */
   function animate() {
     frameCount++;
+    if (heroZoneActive()) {
+      particles.length = 0;
+    }
     ctx.clearRect(0, 0, W, H);
     for (var i = particles.length - 1; i >= 0; i--) {
       particles[i].update();
