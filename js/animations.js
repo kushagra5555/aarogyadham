@@ -104,36 +104,12 @@ setTimeout(function() {
       document.addEventListener("mousedown", function() { document.body.classList.add("cursor-clicked"); });
       document.addEventListener("mouseup",   function() { document.body.classList.remove("cursor-clicked"); });
 
-      /* Section-aware color themes */
-      var sectionThemes = [
-        { sel: ".hero",         color: "#fff",    ring: "rgba(255,255,255,0.5)", size: "44px" },
-        { sel: ".stats",        color: "#E5B842", ring: "rgba(229,184,66,0.5)",  size: "40px" },
-        { sel: ".pain",         color: "#1B5E3B", ring: "rgba(27,94,59,0.4)",    size: "36px" },
-        { sel: ".conditions",   color: "#2E7D52", ring: "rgba(46,125,82,0.45)",  size: "38px" },
-        { sel: ".iyengar",      color: "#C8952A", ring: "rgba(200,149,42,0.45)", size: "42px" },
-        { sel: ".founder",      color: "#C8952A", ring: "rgba(200,149,42,0.45)", size: "40px" },
-        { sel: ".testimonials", color: "#1B5E3B", ring: "rgba(27,94,59,0.35)",   size: "38px" },
-        { sel: ".pricing",      color: "#C8952A", ring: "rgba(200,149,42,0.5)",  size: "40px" },
-        { sel: ".booking",      color: "#fff",    ring: "rgba(255,255,255,0.4)", size: "44px" },
-        { sel: ".compare-section", color: "#1B5E3B", ring: "rgba(27,94,59,0.4)", size: "36px" },
-        { sel: ".faq",          color: "#1B5E3B", ring: "rgba(27,94,59,0.35)",   size: "36px" }
-      ];
-
       function applyTheme(color, ringColor, size) {
         document.documentElement.style.setProperty("--cursor-color", color);
         document.documentElement.style.setProperty("--ring-color",   ringColor);
         document.documentElement.style.setProperty("--ring-size",    size);
       }
-
-      if (window.IntersectionObserver) {
-        sectionThemes.forEach(function(t) {
-          var el = document.querySelector(t.sel);
-          if (!el) return;
-          new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) applyTheme(t.color, t.ring, t.size);
-          }, { threshold: 0.4 }).observe(el);
-        });
-      }
+      applyTheme("#C8952A", "rgba(200,149,42,0.58)", "38px");
 
       /* Element-level cursor label reactions */
       var labelMap = [
