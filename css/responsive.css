@@ -1,0 +1,435 @@
+/* ============================================================
+   RESPONSIVE.CSS — Yog Arogyadham
+   Breakpoints: 1024px tablet | 768px mobile | 480px small
+   ============================================================ */
+
+/* ── Hide sticky bar on desktop by default ── */
+.mobile-sticky-bar { display: none; }
+
+/* ============================================================
+   HERO VIDEO BACKGROUND
+   ============================================================ */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero { position: relative; }
+.hero-overlay          { z-index: 1 !important; }
+.hero-pattern-layer,
+.hero-rays,
+.hero-lotus-bg,
+.hero-om-watermark,
+.hero-mandala,
+.hero-content,
+.hero-cert-strip       { position: relative; z-index: 2 !important; }
+
+/* ============================================================
+   CONDITIONS SECTION — Fix white screen on click
+   ============================================================ */
+.cat-subview {
+  background: var(--cream, #FAFAF7) !important;
+  border-radius: 16px;
+  padding: 24px;
+}
+.conditions-grid img,
+.cond-pose-img,
+.pose-img {
+  background: linear-gradient(135deg, #1B5E3B 0%, #0D3D25 100%);
+  border-radius: 12px;
+  min-height: 160px;
+  object-fit: cover;
+}
+/* If pose image fails to load → show green gradient */
+.conditions-grid img[src=""],
+.conditions-grid img:not([src]) {
+  content: "";
+  display: block;
+  background: linear-gradient(135deg, #1B5E3B 0%, #0D3D25 100%);
+  border-radius: 12px;
+  min-height: 180px;
+}
+
+/* ============================================================
+   IMAGE FALLBACK — Founder & BKS Photos
+   ============================================================ */
+.founder-primary img,
+.founder-secondary img,
+.iyengar-portrait-inner img,
+.hero-frame-inner img {
+  background: linear-gradient(135deg, #1B5E3B 0%, #0D3D25 100%);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ============================================================
+   TABLET — max-width: 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+
+  .container { padding: 0 24px; }
+
+  .hero-frame-outer { width: 340px !important; height: 420px !important; }
+
+  .founder-grid { gap: 40px; }
+  .iyengar-grid { gap: 40px; }
+  .pricing-grid { gap: 20px; }
+  .how-grid     { gap: 20px; }
+  .stats-grid   { gap: 20px; }
+}
+
+/* ============================================================
+   MOBILE — max-width: 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* ── Global ── */
+  body    { padding-bottom: 64px; }
+  section { padding: 48px 0 !important; }
+  .container { padding: 0 16px; }
+
+  .section-heading { font-size: clamp(22px, 7vw, 30px) !important; line-height: 1.25 !important; }
+  .section-sub     { font-size: 15px; }
+  .eyebrow         { font-size: 11px; letter-spacing: 2px; }
+
+  /* ── Hide sidebar dots ── */
+  .sb-nav { display: none !important; }
+
+  /* ── NAV ── */
+  .nav { height: 64px !important; padding: 0 16px !important; }
+  .nav-links, .nav-phone { display: none !important; }
+  .nav-cta { display: none !important; }
+  .mobile-toggle { display: flex !important; }
+  .logo-name { font-size: 18px !important; }
+
+  /* ── HERO ── */
+  .hero { min-height: 100svh; padding: 80px 0 100px; }
+
+  .hero-content {
+    flex-direction: column !important;
+    gap: 32px;
+    padding: 0 16px;
+    align-items: center;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .hero-title { font-size: clamp(36px, 12vw, 52px) !important; text-align: center; }
+  .hero-title-1,
+  .hero-title-2   { justify-content: center !important; }
+  .hero-sub,
+  .hero-body      { text-align: center; }
+  .hero-eyebrow,
+  .hero-badge,
+  .hero-pain-hook { text-align: center; }
+  .hero-pain-hook { font-size: 14px; }
+
+  /* ── Hero CTA buttons — stack vertically ── */
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  /* ── Hero stats strip ── */
+  .hero-mini-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .hero-stat-vline { display: none !important; }
+  .hero-mini-stat  { flex: 0 0 calc(33% - 12px); text-align: center; }
+  .hero-urgency,
+  .hero-social-proof { text-align: center; font-size: 13px; }
+  .hero-divider { justify-content: center !important; }
+
+  /* ── BKS Iyengar portrait (hero right) ── */
+  .hero-frame-outer {
+    width: 200px !important;
+    height: 260px !important;
+    margin: 0 auto;
+  }
+  .hero-iyengar-quote { font-size: 11px; }
+
+  /* ── Cert strip ── */
+  .hero-cert-strip {
+    flex-direction: column !important;
+    gap: 0;
+    padding: 16px;
+  }
+  .cert-strip-divider { width: 100% !important; height: 1px !important; margin: 0; }
+  .cert-item          { padding: 12px 16px; }
+
+  /* ── Stats grid ── */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px;
+  }
+  .stat-num { font-size: clamp(32px, 10vw, 48px); }
+
+  /* ── Pain section ── */
+  .pain-grid { grid-template-columns: 1fr !important; gap: 20px; }
+
+  /* ── CONDITIONS ── */
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+  .cat-card        { padding: 16px 12px; }
+  .cat-card-icon   { font-size: 28px; }
+  .cat-card-title  { font-size: 13px; }
+  .cat-subview     { padding: 20px 16px; }
+  .cat-subhead     { font-size: 18px; }
+  .conditions-grid { grid-template-columns: 1fr !important; gap: 12px; }
+
+  /* ── IYENGAR section ── */
+  .iyengar-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+  .iyengar-portrait     { max-width: 280px; margin: 0 auto; }
+  .iyengar-portrait-inner { height: 340px !important; }
+  .iyengar-title        { font-size: clamp(22px, 7vw, 32px) !important; }
+  .iyengar-quote        { font-size: 16px; }
+  .iyengar-content      { text-align: center; }
+  .iyengar-badges       { justify-content: center !important; flex-wrap: wrap; }
+  .gold-divider         { justify-content: center !important; }
+
+  /* ── How It Works ── */
+  .how-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .how-card { height: auto !important; min-height: 220px; }
+
+  /* ── Timeline ── */
+  .timeline-h-scroll,
+  .tl-track {
+    flex-direction: column !important;
+    overflow-x: visible !important;
+  }
+  .tl-item    { width: 100% !important; min-width: unset !important; }
+  .tl-nav     { display: none !important; }
+
+  /* ── FOUNDER ── */
+  .founder-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+  .founder-images {
+    max-width: 300px;
+    margin: 0 auto;
+    height: 340px !important;
+  }
+  .founder-secondary {
+    width: 120px !important;
+    height: 120px !important;
+    right: -10px !important;
+    bottom: -10px !important;
+  }
+  .depth-badge     { font-size: 10px; padding: 6px 8px; }
+  .founder-name    { font-size: clamp(24px, 8vw, 36px) !important; text-align: center; }
+  .founder-role,
+  .founder-meta,
+  .founder-quals,
+  .founder-cta     { text-align: center; }
+  .founder-cta     { display: flex; justify-content: center; }
+
+  /* ── Testimonials ── */
+  .test-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* ── Case Studies ── */
+  .case-grid,
+  .cases-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* ── Gallery ── */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px;
+  }
+
+  /* ── Pricing ── */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .price-card.featured { transform: none !important; }
+
+  /* ── Consult / Book section ── */
+  .consult-grid,
+  .booking-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+  .booking-form-wrap { padding: 24px 16px; }
+  .form-row          { flex-direction: column !important; gap: 0; }
+  .consult-title-1   { font-size: clamp(20px, 6vw, 28px) !important; }
+  .consult-grid > div:first-child { text-align: center; }
+
+  /* ── Footer ── */
+  .footer-grid,
+  .footer-cols,
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+    text-align: center;
+  }
+  .footer-contact-item { justify-content: center !important; }
+
+  /* ── Blog ── */
+  .blog-grid { grid-template-columns: 1fr !important; gap: 20px; }
+
+  /* ── Shloka band ── */
+  .shloka-band  { padding: 24px 16px; }
+  .shloka-deva  { font-size: clamp(20px, 6vw, 28px); }
+
+  /* ── Scroll indicator ── */
+  .scroll-indicator { display: none !important; }
+
+  /* ── WhatsApp FAB — hidden (sticky bar replaces it) ── */
+  .wa-fab { display: none !important; }
+
+  /* ── Music FAB — move above sticky bar ── */
+  .music-fab {
+    bottom: 72px !important;
+    right: 16px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+  }
+
+  /* ── WhatsApp popup widget — move above sticky bar ── */
+  .wap-widget,
+  .wap-popup    { bottom: 70px !important; }
+
+  /* ── MOBILE STICKY BAR — THE MAIN FIX ── */
+  .mobile-sticky-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #0D3D25;
+    border-top: 2.5px solid #C8952A;
+    z-index: 99999;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+
+  .msb-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    min-height: 44px;
+    transition: background 0.2s ease;
+    border-right: 1px solid rgba(200, 149, 42, 0.3);
+  }
+  .msb-btn:last-child  { border-right: none; }
+  .msb-btn:active      { background: rgba(255,255,255,0.12); }
+
+  .msb-icon { font-size: 20px; line-height: 1; }
+
+  .msb-call  { background: rgba(27, 94, 59, 0.6); }
+  .msb-wa    { background: rgba(37, 211, 102, 0.25); }
+  .msb-book  { background: rgba(200, 149, 42, 0.35); }
+}
+
+/* ============================================================
+   SMALL MOBILE — max-width: 480px
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: clamp(30px, 11vw, 42px) !important;
+  }
+
+  .hero-frame-outer {
+    width: 170px !important;
+    height: 220px !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat-num { font-size: 30px; }
+
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-mini-stat { flex: 0 0 calc(50% - 8px); }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    font-size: 14px;
+    padding: 14px 24px;
+  }
+
+  .msb-btn  { font-size: 9px; }
+  .msb-icon { font-size: 16px; }
+
+  .pricing-grid { max-width: 100%; }
+
+  .founder-images { height: 300px !important; }
+
+.section-heading {
+  font-size: clamp(20px, 6.5vw, 26px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .haridwar-header { margin-bottom: 36px !important; }
+  .haridwar-name { font-size: clamp(24px, 8vw, 36px) !important; text-align: center; }
+  .haridwar-role,
+  .haridwar-meta,
+  .haridwar-copy,
+  .haridwar-address { text-align: center; }
+  .haridwar-body { padding: 24px 22px 28px !important; }
+  .haridwar-photo { height: 360px !important; }
+  .haridwar-tag {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 18px !important;
+  }
+}

@@ -1,0 +1,601 @@
+.hero, .hero *, .hero-content, .hero-badge, .hero-eyebrow,
+.hero-title, .hero-title-1, .hero-title-2, .hero-title .word,
+.hero-sub, .hero-body, .hero-cta, .hero-trust, .hero-trust-inner,
+.hero-trust-item, .scroll-indicator, .hero-right, .hero-left,
+.hero-frame-outer, .hero-frame-inner, .hero-portrait-caption {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  animation-fill-mode: both !important;
+}
+.how-card, .cat-card, .test-card, .flip-card, .pain-card, .faq-item,
+.btn, .btn-gold, .btn-hero-primary, .btn-hero-secondary, .btn-founder {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.btn-gold, .btn-hero-primary, .btn-founder, .btn-whatsapp {
+  animation: pulse-gold 2.5s ease-in-out infinite !important;
+}
+.hero-bg{will-change:transform}
+#heroParticles {
+  position:absolute; inset:0; width:100%; height:100%;
+  pointer-events:none; z-index:2;
+}
+.hero-badge {
+  animation: badgeGlow 2.5s ease-in-out infinite !important;
+}
+.scroll-cta, .scroll-indicator, .hero-scroll { animation: bounce 1.8s ease-in-out infinite !important; }
+}
+
+/* ═══════════════════════════════════════
+   MANDALA RINGS — Concentric gold circles
+═══════════════════════════════════════ */
+.hero-mandala {
+  position: absolute;
+  right: 14%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 560px;
+  height: 560px;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-mandala-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  animation: mandalaBreath 7s ease-in-out infinite;
+}
+.hero-mandala-ring:nth-child(1){ width:110px;  height:110px;  border:1.5px solid rgba(200,149,42,0.18); animation-delay:0s;  }
+.hero-mandala-ring:nth-child(2){ width:210px;  height:210px;  border:1px   solid rgba(200,149,42,0.12); animation-delay:0.6s;}
+.hero-mandala-ring:nth-child(3){ width:320px;  height:320px;  border:1px   solid rgba(200,149,42,0.08); animation-delay:1.2s;}
+.hero-mandala-ring:nth-child(4){ width:440px;  height:440px;  border:1px   solid rgba(200,149,42,0.05); animation-delay:1.8s;}
+.hero-mandala-ring:nth-child(5){ width:558px;  height:558px;  border:1px   solid rgba(200,149,42,0.03); animation-delay:2.4s;}
+@keyframes mandalaBreath {
+  0%   { transform: translate(-50%,-50%) rotate(0deg)    scale(1);    opacity: 0.85; }
+  50%  { transform: translate(-50%,-50%) rotate(180deg)  scale(1.03); opacity: 1;    }
+  100% { transform: translate(-50%,-50%) rotate(360deg)  scale(1);    opacity: 0.85; }
+}
+
+/* ═══════════════════════════════════════
+   GURUJI QUOTE — beneath portrait caption
+═══════════════════════════════════════ */
+.hero-guruji-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.7vw, 21px);
+  color: rgba(229,184,66,0.95);
+  text-align: center;
+  max-width: 340px;
+  margin: 16px auto 0;
+  line-height: 1.75;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(200,149,42,0.3);
+  text-shadow: 0 0 20px rgba(200,149,42,0.3);
+}
+.hero-guruji-quote .guruji-attr {
+  display: block;
+  margin-top: 8px;
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-style: normal;
+  color: rgba(229,184,66,0.70);
+  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   SOCIAL PROOF — beneath CTA buttons
+═══════════════════════════════════════ */
+.hero-social-proof {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.hero-social-proof strong {
+  color: rgba(229,184,66,0.9);
+  font-weight: 600;
+}
+.hero-social-proof .proof-dot {
+  color: rgba(200,149,42,0.4);
+  margin: 0 4px;
+}
+
+/* ═══════════════════════════════════════
+   CERTIFICATION STRIP — below hero
+═══════════════════════════════════════ */
+.hero-cert-strip {
+  background: linear-gradient(135deg, rgba(10,48,29,0.98) 0%, rgba(22,78,50,0.97) 100%);
+  border-top: 1px solid rgba(200,149,42,0.35);
+  border-bottom: 1px solid rgba(200,149,42,0.2);
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+.hero-cert-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(229,184,66,0.6), transparent);
+}
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cert-icon-wrap {
+  width: 46px; height: 46px;
+  border: 1.5px solid rgba(200,149,42,0.7);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #E5B842;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: rgba(200,149,42,0.08);
+}
+.cert-item-text strong {
+  display: block;
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: #E5B842;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  line-height: 1.2;
+}
+.cert-item-text span {
+  font-size: clamp(12px, 1.1vw, 13.5px);
+  color: rgba(255,255,255,0.70);
+  letter-spacing: 0.3px;
+}
+.cert-strip-divider {
+  width: 1px; height: 38px;
+  background: linear-gradient(to bottom, transparent, rgba(200,149,42,0.35), transparent);
+}
+@media (max-width: 900px) {
+  .hero-cert-strip { gap: 20px; padding: 16px 24px; }
+}
+
+
+
+/* ═══════════════════════════════════════
+   BACKGROUND — Rich directional gradient
+═══════════════════════════════════════ */
+.hero-overlay {
+  background:
+    linear-gradient(
+      112deg,
+      rgba(2, 18, 10, 0.72) 0%,
+      rgba(10, 48, 28, 0.60) 35%,
+      rgba(5, 30, 17, 0.50) 60%,
+      rgba(1, 12, 6, 0.70) 100%
+    ) !important;
+}
+
+/* Lotus tile pattern — sits between photo and overlay */
+.hero-pattern-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ccircle cx='100' cy='100' r='90' fill='none' stroke='%23C8952A' stroke-width='0.7' opacity='0.16'/%3E%3Ccircle cx='100' cy='100' r='65' fill='none' stroke='%23C8952A' stroke-width='0.5' opacity='0.11'/%3E%3Ccircle cx='100' cy='100' r='40' fill='none' stroke='%23C8952A' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='100' cy='100' r='18' fill='none' stroke='%23C8952A' stroke-width='0.5' opacity='0.12'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(0 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(45 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(90 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(135 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(180 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(225 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(270 100 100)'/%3E%3Cellipse cx='100' cy='56' rx='9' ry='22' fill='%23C8952A' opacity='0.055' transform='rotate(315 100 100)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* ═══════════════════════════════════════
+   OM — Move LEFT side, behind text content
+═══════════════════════════════════════ */
+.hero-om-watermark {
+  right: auto !important;
+  left: 2% !important;
+  font-size: clamp(200px, 22vw, 320px) !important;
+  color: rgba(200,149,42,0.22) !important;
+  z-index: 2 !important;
+}
+.hero-mandala {
+  right: auto !important;
+  left: 15% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 2 !important;
+}
+.hero-mandala-ring:nth-child(1) { border: 1.5px solid rgba(200,149,42,0.32) !important; }
+.hero-mandala-ring:nth-child(2) { border: 1px   solid rgba(200,149,42,0.24) !important; }
+.hero-mandala-ring:nth-child(3) { border: 1px   solid rgba(200,149,42,0.16) !important; }
+.hero-mandala-ring:nth-child(4) { border: 1px   solid rgba(200,149,42,0.10) !important; }
+.hero-mandala-ring:nth-child(5) { border: 1px   solid rgba(200,149,42,0.06) !important; }
+
+/* ═══════════════════════════════════════
+   LARGE LOTUS — hero centrepiece bg element
+═══════════════════════════════════════ */
+.hero-lotus-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 85vw);
+  height: min(700px, 85vw);
+  z-index: 1;
+  pointer-events: none;
+  animation: lotusBreath 12s ease-in-out infinite;
+}
+.hero-lotus-bg svg { width: 100%; height: 100%; }
+@keyframes lotusBreath {
+  0%   { transform: translate(-50%,-50%) rotate(0deg)    scale(1);    opacity: 0.9; }
+  50%  { transform: translate(-50%,-50%) rotate(180deg)  scale(1.04); opacity: 1;   }
+  100% { transform: translate(-50%,-50%) rotate(360deg)  scale(1);    opacity: 0.9; }
+}
+
+/* ═══════════════════════════════════════
+   PAIN HOOK — bright white, bigger
+═══════════════════════════════════════ */
+.hero-pain-hook {
+  font-size: clamp(16px, 1.9vw, 22px) !important;
+  color: rgba(255,255,255,0.85) !important;
+  font-style: italic !important;
+}
+
+/* ═══════════════════════════════════════
+   STATS — gradient white-gold text
+═══════════════════════════════════════ */
+.hero-mini-stat .stat-num {
+  background: linear-gradient(160deg, #ffffff 0%, #E5B842 55%, #C8952A 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.hero-mini-stat .stat-label {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 12px !important;
+}
+
+/* Urgency — white text for contrast */
+.hero-urgency { font-size: 13px !important; }
+
+/* ═══════════════════════════════════════
+   GLOBAL TEXT OVERFLOW FIX
+   Prevents hero text from spilling outside
+   its container at any viewport width
+═══════════════════════════════════════ */
+.hero-left,
+.hero-right {
+  min-width: 0;
+  overflow: visible; /* FIX: was overflow:hidden — was clipping all hero text */
+}
+.hero-title,
+.hero-title-1,
+.hero-title-2,
+.hero-sub,
+.hero-body,
+.hero-eyebrow,
+.hero-badge,
+.hero-pain-hook,
+.hero-social-proof,
+.hero-urgency,
+.hero-guruji-quote {
+  max-width: 100%;
+  word-break: normal;        /* FIX: was break-word — was splitting "Possible" mid-word */
+  overflow-wrap: break-word; /* Safety net for genuinely long words only */
+}
+
+/* ═══════════════════════════════════════
+   TABLET INTERMEDIATE — 900px to 1024px
+   Tightens layout before it fully stacks
+═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 28px !important;
+    padding: 0 20px !important;
+  }
+  .hero-title {
+    font-size: clamp(34px, 5.5vw, 52px) !important;
+  }
+  .hero-sub {
+    font-size: clamp(14px, 1.8vw, 18px);
+  }
+  .hero-body {
+    font-size: clamp(13px, 1.6vw, 16px);
+  }
+  .hero-pain-hook {
+    font-size: clamp(13px, 1.6vw, 18px) !important;
+  }
+  .hero-mini-stat .stat-num {
+    font-size: clamp(30px, 3.8vw, 50px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column !important;
+    gap: 28px !important;
+    padding: 0 20px !important;
+    align-items: center !important;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .hero-title {
+    font-size: clamp(32px, 9vw, 52px) !important;
+    text-align: center !important;
+  }
+  .hero-title-1,
+  .hero-title-2 {
+    justify-content: center !important;
+  }
+  .hero-sub,
+  .hero-body {
+    text-align: center;
+  }
+  .hero-eyebrow,
+  .hero-badge,
+  .hero-pain-hook {
+    text-align: center !important;
+  }
+  .hero-cta {
+    justify-content: center !important;
+  }
+  .hero-mini-stats {
+    justify-content: center;
+  }
+  .hero-social-proof,
+  .hero-urgency {
+    text-align: center;
+  }
+  .hero-divider {
+    justify-content: center !important;
+  }
+  .hero-frame-outer {
+    width: 240px !important;
+    height: 300px !important;
+    margin: 0 auto !important;
+  }
+  .hero-iyengar-quote {
+    font-size: clamp(13px, 2vw, 18px);
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-lotus-bg { width: min(380px, 95vw); height: min(380px, 95vw); }
+  .hero-om-watermark { font-size: 140px !important; left: -2% !important; }
+}
+
+/* ═══════════════════════════════════════
+   PAIN-FIRST HOOK — above the badge
+═══════════════════════════════════════ */
+.hero-pain-hook {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(15px, 1.7vw, 19px);
+  color: rgba(229,184,66,0.78);
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  animation: painHookIn 0.7s ease-out 0.3s forwards;
+}
+@keyframes painHookIn {
+  from { opacity: 0; transform: translateY(10px); }
+}
+
+/* ═══════════════════════════════════════
+   BIG STATS — 56px numbers inside hero
+═══════════════════════════════════════ */
+.hero-mini-stats {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 26px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(200,149,42,0.22);
+  border-bottom: 1px solid rgba(200,149,42,0.22);
+}
+.hero-mini-stat {
+  flex: 1;
+  text-align: center;
+}
+.hero-mini-stat .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(38px, 4.8vw, 58px);
+  color: #E5B842;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.hero-mini-stat .stat-num sup {
+  font-size: 0.55em;
+  vertical-align: super;
+  margin-left: 1px;
+}
+.hero-mini-stat .stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.52);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+.hero-stat-vline {
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(to bottom, transparent, rgba(200,149,42,0.32), transparent);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   URGENCY BADGE — pulsing gold pill
+═══════════════════════════════════════ */
+.hero-urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(200,149,42,0.10);
+  border: 1px solid rgba(200,149,42,0.38);
+  border-radius: 24px;
+  padding: 7px 16px;
+  font-size: 12.5px;
+  color: rgba(229,184,66,0.92);
+  margin-top: 14px;
+  letter-spacing: 0.3px;
+  cursor: default;
+  animation: urgencyPulse 2.8s ease-in-out infinite;
+}
+.hero-urgency .urgency-dot {
+  width: 7px; height: 7px;
+  background: #E5B842;
+  border-radius: 50%;
+  animation: urgencyDot 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes urgencyPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(200,149,42,0.25); }
+  .hero-mini-stat .stat-num { font-size: 34px; }
+  .hero-pain-hook { font-size: 14px; }
+}
+
+
+
+/* ═══════════════════════════════════════
+   SACRED LIGHT RAYS — conic gradient,
+   slowly rotating, fades at edges
+═══════════════════════════════════════ */
+.hero-rays {
+  position: absolute;
+  left: 50%; top: 46%;
+  transform: translate(-50%, -50%);
+  width: 160%; height: 160%;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(200,149,42,0.045) 0deg 2deg,
+    transparent             2deg 13deg
+  );
+  -webkit-mask: radial-gradient(ellipse 58% 58% at 50% 50%,
+    rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 72%);
+  mask: radial-gradient(ellipse 58% 58% at 50% 50%,
+    rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 72%);
+  animation: sacredRaysRotate 120s linear infinite;
+}
+@keyframes sacredRaysRotate {
+  from { transform: translate(-50%,-50%) rotate(0deg);   }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════
+   PORTRAIT DIVINE HALO
+═══════════════════════════════════════ */
+.hero-right { position: relative; }
+
+.portrait-halo {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 110%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      rgba(229,184,66,0.22)  0%,
+      rgba(200,149,42,0.10) 30%,
+      rgba(200,149,42,0.03) 55%,
+      transparent           72%);
+  pointer-events: none;
+  z-index: 0;
+  animation: haloBreath 6s ease-in-out infinite;
+}
+@keyframes haloBreath {
+  0%,100% { opacity: 0.75; transform: translate(-50%,-50%) scale(1);    }
+}
+
+/* Ensure frame sits above halo */
+.hero-frame-outer { position: relative; z-index: 1 !important; overflow: visible !important; }
+
+/* ═══════════════════════════════════════
+   HERO HEADLINE — slightly larger
+═══════════════════════════════════════ */
+.hero-title-1 { letter-spacing: -1px; }
+
+
+
+  /* ════════════════════════════════════════════
+     IYENGAR QUOTE — Large, Bold, Catchy, Animated
+  ════════════════════════════════════════════ */
+  .hero-iyengar-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(18px, 2.2vw, 26px);
+    color: #E5B842;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: none;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    opacity: 0;
+    position: relative;
+    padding: 12px 20px;
+    will-change: opacity, transform;
+    animation:
+      iyengarSlideIn  0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards,
+      iyengarPulse    3s   ease-in-out                     2.5s infinite;
+    text-shadow:
+      0 0 30px rgba(229,184,66,0.7),
+      0 2px 8px rgba(0,0,0,0.45);
+  }
+
+  /* Gold underline bar beneath quote */
+  .hero-iyengar-quote::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #E5B842, #C8952A, transparent);
+    margin: 8px auto 0;
+    border-radius: 2px;
+    animation: iyengarLineGrow 0.8s ease-out 2.1s forwards;
+    box-shadow: 0 0 10px rgba(229,184,66,0.6);
+  }
+  @keyframes iyengarLineGrow {
+    to { width: 85%; }
+  }
+
+  /* Photo — flat, fully visible */
+  .hero-frame-inner img {
+    transform: none !important;
+    transform-origin: center center !important;
+    transition: transform 0.4s ease !important;
+  }
+
+  /* Hover: subtle zoom only */
+  .hero-frame-outer:hover .hero-frame-inner img {
+    transform: scale(1.04) !important;
+  }
+
+  /* Gold ambient glow behind portrait */
+  .hero-frame-outer::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 28px;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200,149,42,0.22), transparent 65%);
+    pointer-events: none;
+    z-index: -1;
+    animation: frameGlowPulse 4s ease-in-out infinite;
+  }
+  @keyframes frameGlowPulse {
+    0%, 100% { opacity: 0.6; }
+    50%       { opacity: 1.0; }
+  }
