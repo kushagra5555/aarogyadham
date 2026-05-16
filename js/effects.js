@@ -164,7 +164,6 @@ function initFounderDepth() {
 /* ── Bootstrap ─────────────────────────────────────────────────────────── */
 function init() {
   initFlipTilt();
-  initHeroMouseParallax();
   initFounderDepth();
 }
 
