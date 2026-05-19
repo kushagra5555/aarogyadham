@@ -8,6 +8,18 @@ Yog Arogyadham is an Iyengar medical yoga centre serving Dehradun and Haridwar, 
 - Guided breathwork and personalised practice plans
 - Free consultation for new patients
 
+## Condition Guides
+- Back pain: https://yogaarogyadham.studio/conditions/back-pain.html
+- Sciatica: https://yogaarogyadham.studio/conditions/sciatica.html
+- Cervical spondylosis: https://yogaarogyadham.studio/conditions/cervical-spondylosis.html
+- Knee pain: https://yogaarogyadham.studio/conditions/knee-pain.html
+- Diabetes support: https://yogaarogyadham.studio/conditions/diabetes-support.html
+- Slip disc: https://yogaarogyadham.studio/conditions/slip-disc.html
+- Frozen shoulder: https://yogaarogyadham.studio/conditions/frozen-shoulder.html
+- Arthritis: https://yogaarogyadham.studio/conditions/arthritis.html
+- Lumbar pain: https://yogaarogyadham.studio/conditions/lumbar-pain.html
+- Stress and anxiety support: https://yogaarogyadham.studio/conditions/stress-anxiety-support.html
+
 ## Locations
 - Dehradun centre: Trimurti Bhavan, OPP. Rock Valley Apartment, Alka Dairy, GMS Road, Sevla Kala Chowk, Dehradun, India
 - Haridwar centre: Aaroham Yoga Studio, 725/1, Avash Vikas Model Colony, Opp. Prem Nagar Ashram, Haridwar, Uttarakhand, India
