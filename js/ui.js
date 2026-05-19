@@ -931,12 +931,13 @@ if (consultForm) {
     const condition = document.getElementById('cf-condition').value;
     const selectedDay = document.getElementById('cf-selected-day').value;
     const selectedSlot = document.getElementById('cf-selected-slot').value;
+    const consent = !!(document.getElementById('cf-consent') && document.getElementById('cf-consent').checked);
     const submitBtn = consultForm.querySelector('.btn-submit');
     const successBox = document.getElementById('formSuccess');
     const formAction = (consultForm.getAttribute('action') || '').trim();
     const isWeb3Forms = /web3forms/i.test(formAction);
-    if (!name || !phone || !condition || !selectedDay || !selectedSlot) {
-      alert('Please fill in your name, phone number, condition, preferred day, and preferred time slot.');
+    if (!name || !phone || !condition || !selectedDay || !selectedSlot || !consent) {
+      alert('Please fill in your name, phone number, condition, preferred day, preferred time slot, and consent before submitting.');
       return;
     }
 

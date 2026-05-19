@@ -126,6 +126,24 @@ a, button, .btn, .btn-primary, .btn-outline,
   display: none; text-align: center; padding: 24px;
   color: var(--green-primary); font-weight: 600; font-size: 16px;
 }
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 6px 0 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.form-consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.form-consent label {
+  margin: 0;
+}
 
 /* ============== STICKY MOBILE BAR ============== */
 .mobile-sticky-bar {

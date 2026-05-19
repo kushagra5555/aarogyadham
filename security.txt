@@ -1,0 +1,6 @@
+Contact: mailto:ajitsinghchauhanss@gmail.com
+Contact: tel:+917983040473
+Canonical: https://yogaarogyadham.studio/.well-known/security.txt
+Expires: 2027-05-19T00:00:00.000Z
+Preferred-Languages: en, hi
+Policy: https://yogaarogyadham.studio/privacy-policy.html
