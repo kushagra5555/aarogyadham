@@ -100,6 +100,11 @@
           "availableLanguage": ["en", "hi"]
         }
       ],
+      "areaServed": [
+        {"@type": "City", "name": "Dehradun"},
+        {"@type": "City", "name": "Haridwar"},
+        {"@type": "AdministrativeArea", "name": "Uttarakhand"}
+      ],
       "sameAs": [
         "https://instagram.com/yogaarogyadham",
         "https://facebook.com/yogaarogyadham",
@@ -187,7 +192,12 @@
       "url": "https://yogaarogyadham.studio/",
       "name": "Yog Arogyadham",
       "publisher": {"@id": "https://yogaarogyadham.studio/#organization"},
-      "inLanguage": "en-IN"
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yogaarogyadham.studio/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "WebPage",
@@ -319,6 +329,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The starting point can be very gentle. Supported positioning, breathwork and careful sequencing are often used before stronger movement is introduced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which centre should I contact if I live in Dehradun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "People in Dehradun can contact the main Yog Arogyadham Dehradun centre at Trimurti Bhavan, Sevla Kala Chowk, or use the website consultation form for founder-led guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you also support patients in Haridwar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Yog Arogyadham also supports patients through its Haridwar centre at Aaroham Yoga Studio, with local team guidance and access to the same therapeutic support approach."
           }
         }
       ]

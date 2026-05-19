@@ -1071,6 +1071,8 @@ const faqs = [
   ['Do you offer online sessions?','Yes. We offer live personalised video sessions for patients who cannot visit in person. The program is fully customised and monitored online.'],
   ['What exactly is the BKS Iyengar method?','BKS Iyengar is considered the father of modern yoga therapy. His method uses precise body alignment, props like blocks belts and chairs, and intelligent sequencing to heal medical conditions. It is the world’s most respected and clinically validated yoga tradition.'],
   ['What is the first step to start?','Simply book a FREE 30 minute consultation on WhatsApp. No charges. No commitment. Just an honest conversation about your health and how we can help.'],
+  ['Which centre should I contact if I live in Dehradun?','If you are in Dehradun, you can contact our main Yog Arogyadham Dehradun centre directly or use the website consultation form for founder-led guidance.'],
+  ['Do you also support patients in Haridwar?','Yes. We also support patients through our Haridwar centre at Aaroham Yoga Studio, with local team guidance and the same therapeutic support approach.'],
 ];
 const faqList = document.getElementById('faqList');
 if (faqList) {
